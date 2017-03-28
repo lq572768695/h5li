@@ -2,7 +2,7 @@
 #安装全部依赖
 npm install
 
-
+运行指令 node ./bin/www 
 
 一、总体设计
 
