@@ -3,6 +3,7 @@
 npm install
 
 运行指令 node ./bin/www 
+访问地址 localhost:8000
 
 一、总体设计
 
