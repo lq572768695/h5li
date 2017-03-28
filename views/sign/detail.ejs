@@ -1,0 +1,31 @@
+
+<div class="sign_wrapper">
+	<ul class="sign_wrapper_head">
+		<li>员工</li>
+		<li>上班签到</li>
+		<li style="border-right:0px;">下班签退</li>
+	</ul>
+	<ul class="sign_wrapper_body">
+		<% userlist.forEach(function(user){ %>
+			<li>
+				<div><%=user.name%></div>
+				<div class="status_time">
+					<% if(user.signin==0){ %>
+						<div class="sign_status">正常</div>
+					<% }else{ %>
+						<div class="sign_status" style="color:#e64340">迟到</div>
+					<% } %>
+					<div class="sign_m_time">09:20</div>
+				</div>
+				<div style="border-right:0px;" class="status_time">
+					<% if(user.signback==0){ %>
+						<div class="sign_status">正常</div>
+					<% }else{ %>
+						<div class="sign_status" style="color:#e64340">早退</div>
+					<% } %>
+					<div class="sign_a_time">18:20</div>
+				</div>
+			</li>
+		<% }) %>
+	</ul>
+</div>

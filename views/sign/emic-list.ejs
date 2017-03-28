@@ -1,0 +1,84 @@
+<% Emiclist.forEach(function(emic){ %>
+	<div style="padding-bottom:15px;">
+		<div class="emic_name_num">
+			<span class="emic_n_n emic_n_na" ><%=emic.emicname%></span>
+			<span class="emic_n_n">(<%=emic.totalnum%>人)</span>
+			<span class="load_infor">
+				<span class="load_infor_icon" >
+					<i class="fa fa-angle-right return_f" ></i>
+				</span>
+				<span class="load_infor_text">考勤明细</span>
+			</span>
+		</div>
+		<div>
+			<span class="sign_stu" >正常</span>
+			<span class="load_infor">
+				<span class="load_infor_icon" >
+					<i class="fa fa-angle-right return_f" ></i>
+				</span>
+				<span class="load_infor_text"><%=emic.normalnum%>人</span>
+			</span>
+		</div>
+		<div class="pa_cont_b"> 
+			<div class="pro_back">
+				<div class="pro_color" style="width:<%= emic.normalnum/emic.totalnum*100 %>%"></div>
+			</div>
+		</div>
+		<div>
+			<span class="sign_stu" >迟到</span>
+			<span class="load_infor">
+				<span class="load_infor_icon" >
+					<i class="fa fa-angle-right return_f" ></i>
+				</span>
+				<span class="load_infor_text"><%=emic.latenum%>人</span>
+			</span>
+		</div>
+		<div class="pa_cont_b"> 
+			<div class="pro_back">
+				<div class="pro_color" style="background:#f03b2c;width:<%= emic.latenum/emic.totalnum*100 %>%"></div>
+			</div>
+		</div>
+		<div>
+			<span class="sign_stu" >早退</span>
+			<span class="load_infor">
+				<span class="load_infor_icon" >
+					<i class="fa fa-angle-right return_f" ></i>
+				</span>
+				<span class="load_infor_text"><%=emic.leavenum%>人</span>
+			</span>
+		</div>
+		<div class="pa_cont_b"> 
+			<div class="pro_back">
+				<div class="pro_color" style="background:#f03b2c;width:<%= emic.leavenum/emic.totalnum*100 %>%"></div>
+			</div>
+		</div>
+		<div>
+			<span class="sign_stu" >未签到</span>
+			<span class="load_infor">
+				<span class="load_infor_icon" >
+					<i class="fa fa-angle-right return_f" ></i>
+				</span>
+				<span class="load_infor_text"><%=emic.nosigninnum%>人</span>
+			</span>
+		</div>
+		<div class="pa_cont_b"> 
+			<div class="pro_back">
+				<div class="pro_color" style="background:#ff9700;width:<%= emic.nosigninnum/emic.totalnum*100 %>%"></div>
+			</div>
+		</div>
+		<div>
+			<span class="sign_stu" >未签退</span>
+			<span class="load_infor">
+				<span class="load_infor_icon" >
+					<i class="fa fa-angle-right return_f" ></i>
+				</span>
+				<span class="load_infor_text"><%=emic.nosignbacknum%>人</span>
+			</span>
+		</div>
+		<div class="pa_cont_b"> 
+			<div class="pro_back">
+				<div class="pro_color" style="background:#ff9700;width:<%= emic.nosignbacknum/emic.totalnum*100 %>%"></div>
+			</div>
+		</div>
+	</div>
+<% }) %>

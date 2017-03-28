@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html">
+		<!-- 响应屏幕变化 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title></title>
+		<!-- 重置样式及页面样式文件 -->
+		<link rel="stylesheet" href="common/css/reset.css"> 
+		<link rel="stylesheet" href="common/css/font-awesome.min.css">
+		<link rel="stylesheet" href="sign/css/sign.css">
+		<!-- 日期控件样式文件 -->
+		<link rel="stylesheet" type="text/css" href="sign/css/jquery-ui.css" />
+	</head>
+	<body>
+		<div class="page_head">
+			<div>
+				<span>
+					<i class="fa fa-angle-left return_f" ></i>
+				</span>
+				<span class="head_ri">记录</span>
+				<div class="page_tc">
+					<p class="page_tc1">统计</p>
+					<p class="page_tc2">2017-03</p>
+					<ul class="load_date">
+						<li class="cho_left_r cho_left"></li>
+						<li class="cho_left_r cho_right"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="week_nav">
+				<ul>
+					<li>日</li>
+					<li>一</li>
+					<li>二</li>
+					<li>三</li>
+					<li>四</li>
+					<li>五</li>
+					<li>六</li>
+				</ul>
+			</div>
+			<div class="day_nav horizontal" >
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div class="content_wrapper"></div>
+		<div id="datepicker" style="display:none;" status="0"></div>
+		<input id="date_now" type="hidden"  value="">
+		<script src="common/js/jquery-2.1.1.min.js"></script>
+		<script src="common/js/simpScroller-min.js"></script>
+		<script src="sign/js/jquery-ui.js"></script>
+		<script src="sign/js/sign.js"></script>
+		<script>
+			$( "#datepicker" ).datepicker({
+				inline: true,
+				numberOfMonths:4,
+				showMonthAfterYear: true, // 月在年之后显示   
+				//changeMonth: true,   // 允许选择月份   
+				//changeYear: true,   // 允许选择年份   
+				dateFormat:'yy-mm-dd'  // 设置日期格式 
+			});
+
+			// Hover states on the static widgets
+			$( "#dialog-link, #icons li" ).hover(
+				function() {
+					$( this ).addClass( "ui-state-hover" );
+				},
+				function() {
+					$( this ).removeClass( "ui-state-hover" );
+				}
+			); 
+		</script>
+		<script>
+			simpScroller(document.querySelector(".horizontal"), {
+				verticalScroll: false,
+				horizontalScroll: true,	
+			});
+		</script>
+	</body>
+</html>
